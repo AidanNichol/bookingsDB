@@ -8,17 +8,14 @@
 
 // var PouchDBa  = require('pouchdb-authentication');
 // export var remoteCouch = 'http://aidan:admin@localhost:5984/bookings';
-// var PouchDB = require('pouchdb')
-//   // .plugin(require('pouchdb-adapter-websql'))
-//   // .plugin(require('pouchdb-adapter-http'))
-//   .plugin(require('pouchdb-authentication'));
+// equire('pouchdb-authentication'));
 
 PouchDB.plugin(require('pouchdb-authentication'));
 var db;
-const { getSettings, setSettings, DbSettings, mode } = require('../ducks/settings-duck');
+const { getSettings, setSettings, DbSettings, mode } = require('settings');
 const { remote } = require('electron');
 const BrowserWindow = remote && remote.BrowserWindow;
-const Logit = require('logit.js');
+const Logit = require('logit');
 var logit = Logit(__filename);
 const adapter = DbSettings.adapter || 'websql';
 
